@@ -1,0 +1,104 @@
+<p>structural-directive works!</p>
+<!--             *ngIf             -->
+<div class="row">
+    <div class="col-md-3">
+        <div *ngIf="div1_visibale" class="bg-danger p-3 text-center ">
+            DIV-1
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div *ngIf="div2_visibale" class="bg-success p-3 text-center ">
+            DIV-2
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div  *ngIf="num1==num2"class="bg-primary p-3 text-center ">
+            DIV-3
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div  *ngIf="selectstate == 'india' "class="bg-warning p-3 text-center ">
+            DIV-4
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="btn bg-danger "(click)="hidediv1()">hide</button>
+        <button class="btn bg-success" (click)="showdiv1()">show</button>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+       <button (click)="toggalediv2()" class="btn bg-primary">togal</button>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+        <div style="display: flex;align-items: center;">
+            <input type="text"[(ngModel)]="num1" placeholder="text" class="width-50">
+            <input type="text"[(ngModel)]="num2" placeholder="text" class="width-50">
+        </div>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+        <div style="display: flex;align-items: center;">
+                <input [(ngModel)]="isactive" type="checkbox" class="width-50">
+                <select [(ngModel)]="selectstate" name="" id="">
+                    <option value="">seelct state</option>
+                    <option value="india">india</option>
+                    <option value="sreee lanka">sree lanka</option>
+                    <option value="uas">uas</option>
+
+                </select>
+        </div>
+    </div>
+</div>
+
+<!--             *ngFor             -->
+             
+<div class="row">
+    <div class="col-md-3">
+        <ul>
+            <li *ngFor="let city of cityarray">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <div *ngFor="let cityname of cityarray">{{cityname}}
+            
+        </div>
+    </div>
+    <div class="col-md-3">
+        <select name="" id="">
+            <option *ngFor="let city of cityarray">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="" id="">
+            <option *ngFor="let std of student "[value]="std.studId">{{std.name}}</option>
+        </select>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>name</th>
+                    <th>sarename</th>
+                    <th>inactive</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let st of student;let no = index ">
+                    <td>{{no}}</td>
+                    <td>{{st.name}}</td>
+                    <td>{{st.sarname}}</td>
+                    <td>
+                        <span *ngIf="st.isactive ">Active</span>
+                        <span *ngIf="!st.isactive ">De-active</span>
+                        <!-- {{st.isactive}}  //a active de-active ke jagh pe true false lane ke liya hai --> 
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

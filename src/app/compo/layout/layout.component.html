@@ -1,0 +1,139 @@
+<nav class=" col-12 navbar navbar-expand-lg bg-dark ">
+    <div class="container-fluid ">
+      <h1 class=" text-light navbar-brand fs-3" href="#">Angular</h1>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/data-binding"
+              >Data Binding</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/pipe"
+              >Pipe</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/life-cycle-event"
+              >Life Cycle Event</a
+            >
+          </li>
+          <li class="nav-item dropdown ps-2 pe-2">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Directive
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" routerLink="/attribute-directive"
+                  >Attribute Directive</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/structural-directive"
+                  >Structure Directive</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/ngtemplate"
+                  >ngtemplate</a
+                >
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Forms
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/reactive">Reactive Form</a></li>
+              <li><a class="dropdown-item"  routerLink="/template">Templet Form</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              APIs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="getapi" >Get API</a></li>
+              <li><a class="dropdown-item" routerLink="postapi">Post API</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Decorator
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/view-child">View Child</a></li>
+         
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/alert"
+              >Reuseble Cmponent</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/login"
+              >login</a
+            >
+          </li>
+          
+        </ul>
+        <form class="d-flex">
+            
+            <button class="btn btn-outline-success" type="submit" (click)="logoff()">Log Out</button>
+          </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

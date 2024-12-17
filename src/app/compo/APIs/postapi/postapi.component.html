@@ -1,0 +1,49 @@
+<p>postapi works!</p>
+<app-alert [alertType]="'Warning !'" [massage]="' Walcome To Post Components'"></app-alert>
+<table class="col-9 table">
+    <thead >
+      <tr>
+        <th>id</th>
+        <th>department</th>
+        <th>department</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        @for(item of depart;track  $index){
+          <tr>
+            <td>{{$index}}</td>
+            <td>{{item.departmentName}}</td>
+            <td>{{item.departmentLogo}}</td>
+            <td>
+              <button class="btn btn-primary m-2" (click)="onedit(item)">Edit</button>
+              <button class="btn btn-danger" (click)="ondelete(item.departmentId)">Delete</button>
+            </td>
+          </tr>
+        }
+        
+     
+    </tbody>
+  </table>
+  <div>
+    <form class="border border-secondary">
+        <div class="form-group pt-2">
+          <label for="input1">departmant name</label>
+          <input type="text" [(ngModel)]="deptObj.departmentName" name="departmentName" class="form-control"  placeholder="Enter text for Input Box 1">
+        </div>
+        <div class="form-group pt-2">
+          <label for="input2">departmant logo</label>
+          <input type="text" [(ngModel)]="deptObj.departmentLogo" name="departmentLogo" [ngModelOptions]="{standalone: true}" class="form-control"  placeholder="Enter text for Input Box 2">
+        </div>
+        <div class="form-group pt-5">
+          <button type="submit" class="btn btn-primary">reset</button>
+          @if(deptObj.departmentId == 0){
+            <button type="button" (click)="onsave()" class="btn btn-secondary">save</button>
+          }@else  {<button type="button" (click)="onupdate()" class="btn btn-warning">update</button>}
+
+          
+          
+
+        </div>
+      </form>
+  </div>

@@ -1,0 +1,17 @@
+
+<!--#temp o ng-template ko call karne ke liya banna padta hai or ap # laga ke koi bhi name ka caller bana sakte ho -->
+<div *ngIf="test;else temp" > it is  div  portion</div>
+<ng-template #temp>
+    it is a ng template
+</ng-template>
+
+
+
+
+<div *ngFor="let d of data " >name:{{d.name}}-age:{{d.age}}</div>
+
+<p>----------------------------------------------------------</p>
+
+<ng-container *ngFor="let d of data " #n>
+  name:{{d.name}}-age:{{d.age}}
+</ng-container>

@@ -1,0 +1,87 @@
+<p>attribute-directive works!</p>
+<div class="row">
+    <div class="col-md-3">
+        <div  class="p-3 text-center " [ngClass]="div1_colore">
+            DIV-1
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div  class=" p-3 text-center "[ngClass]="isdiv2_colore ? 'bg-danger' : 'bg-primary'">
+            DIV-2
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div  class=" p-3 text-center "[ngClass]="num1==num2 ?'bg-danger text-white':'bg-warning text-blue'">
+            DIV-3
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div  class="p-3 text-center "[ngClass]="isactive == true ? 'bg-success':''">
+            DIV-4
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 d-flex justify-content-center">
+        <button class="m-3 btn bg-danger "(click)="redclass()">Add red</button>
+        <button class="m-3 btn bg-primary" (click)="blueclass()">Add blue</button>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+       <button  class="m-3 btn bg-primary"(click)="toggalcolore()">togal</button>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+        <div style="display: flex;align-items: center;">
+            <input type="text"[(ngModel)]="num1" placeholder="text" class="width-50">
+            <input type="text"[(ngModel)]="num2" placeholder="text" class="width-50">
+        </div>
+    </div>
+    <div class="col-md-3  d-flex justify-content-center">
+        <div style="display: flex;align-items: center;">
+                <input [(ngModel)]="isactive" type="checkbox" class="width-50">
+                <!-- <select [(ngModel)]="selectstate" name="" id="">
+                    <option value="">seelct state</option>
+                    <option value="india">india</option>
+                    <option value="sreee lanka">sree lanka</option>
+                    <option value="uas">uas</option>
+
+                </select> -->
+        </div>
+    </div>
+</div>
+<div class="row pt-4">
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>name</th>
+                    <th>gender</th>
+                    <th>city</th>
+                    <th>total marks</th>
+                    <th>tatus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let st of student">
+                    <td>{{st.studid}}</td>
+                    <td>{{st.name}}</td>
+                    <td>{{st.gender}}</td>
+                    <td>{{st.city}}</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width':st.totalmarks+'%'}"> {{st.totalmarks +'%'}}</div>
+                          </div>
+                       </td>
+                    <td [ngStyle]="{'background-color':st.isactive ?'green':'red'}">
+                        <span >{{st.isactive ?'active':'de-active'}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5">
+        <div  [ngStyle]="customstyle">
+            div 1
+        </div>
+    </div>
+</div>

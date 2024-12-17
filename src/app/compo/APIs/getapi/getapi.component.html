@@ -1,0 +1,22 @@
+<p>getapi works!</p>
+<app-alert  [alertType]="'Sucecess !'" [massage]="' Walcome To Get Components'"></app-alert>
+<div class="row">
+    <div class="col-4">
+        <button class="btn btn-success" (click)="getalluser()">get user</button>
+        <button class="btn btn-success" (click)="carelists()">get cars</button>
+    </div>
+    <div class="col-3">
+        <select >
+            @for(item of userlist;track $index){
+                <option value="">{{item.username}}</option>
+            }
+        </select>
+    </div>
+    <div class="col-3">
+        <select >
+            @for(item of carelist;track $index){
+                <option value="">{{item.brand}}</option>
+            }
+        </select>
+    </div>
+</div>

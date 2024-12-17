@@ -1,0 +1,52 @@
+<p>data-binding works!</p>
+<div class="div">
+    <div class="col-4">
+        on way ts to html
+    </div>
+    <div class="col-4">
+        
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+<div class="div">
+    <div class="col-4"> <!--.ts file thi .html file ma -->
+        <div class="row">
+           <div class="col-4">
+            interpolition
+                <div class="bg-danger">
+                    {{courseName}}
+                    <input type="{{inputetype}}"value=>
+                </div>
+           </div>
+            <div class="col-4 bg-primary">
+                hello
+            </div>
+            <div class="col-4 bg-success">
+                proparti binding
+                <div [class]="myclass">danger</div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-4">
+        <p>heelo</p>
+        <button class="btn btn-success" (click)="showAlert('welcome Angular 18')">show </button>
+        <button class="btn btn-success" (click)="changecoursename()">change courese</button>
+    </div>
+    <div class="col-4">
+        <input type="text"[(ngModel)]="courseName"/>-{{courseName}}
+    </div>
+    <div class="col-4">
+        <select [(ngModel)]="statename">
+            <option value="">select</option>
+            <option value="lodo">lodo</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            
+        </select>
+        <h2>{{firstname()}}</h2> 
+    </div>
+</div>
